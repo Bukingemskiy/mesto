@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mesto</title>
+  <link rel="stylesheet" href="./pages/index.css">
+</head>
+<body class="page">
+    <header class="header">
+      <img class="header__logo" src="./images/Mesto.png" alt="логотип Mesto">
+    </header>
+    <main class="content">
+      <section class="profile">
+        <div class="profile__info">
+        <div class="profile__avatar-square">
+        <img class="profile__avatar" src="./images/Kusto.jpg" alt="аватар профиля">
+       </div>
+        <div class="profile__text">
+        <div class="profile__name">
+        <h1 class="profile__title name">Жак-Ив Кусто</h1>
+        <div class="profile__edit-button name">
+        <img class="profile__edit-icon" src="./images/Edit.png" alt="иконка изменения профиля">
+        </div>
+        </div>
+        <p class="profile__subtitle">Исследователь океана</p>
+        </div>
+        </div>
+        <div class="profile__add-button">
+          <img class="profile__add-icon" src="./images/Add.png" alt="иконка добавления фотографии">
+        </div>
+      </section>
+      <section class="elements">
+            <article class="element">
+            <img class="element__image" src="./images/Karachaevsk.png" alt="фото Карачаево-Черкессии">
+            <div class="element__group">
+            <h2 class="element__title">Карачаевск</h2>
+            <img class="element__icon" src="./images/Like.png" alt="иконка сердца">
+             </div>
+            </article>
+            <article class="element">
+                <img class="element__image" src="./images/Elbrus.png" alt="фото горы Эльбрус">
+                <div class="element__group">
+                <h2 class="element__title">Гора Эльбрус</h2>
+                <img class="element__icon" src="./images/Like.png" alt="иконка сердца">
+                 </div>
+            </article>
+            <article class="element">
+                <img class="element__image" src="./images/Dombay.png" alt="фото Домбайской поляны">
+                <div class="element__group">
+                <h2 class="element__title">Домбай</h2>
+                <img class="element__icon" src="./images/Like.png" alt="иконка сердца">
+                 </div>
+            </article>
+            <article class="element">
+                <img class="element__image" src="./images/Elbrus.png" alt="фото горы Эльбрус">
+                <div class="element__group">
+                <h2 class="element__title">Гора Эльбрус</h2>
+                <img class="element__icon" src="./images/Like.png" alt="иконка сердца">
+                 </div>
+            </article>
+            <article class="element">
+                <img class="element__image" src="./images/Dombay.png" alt="фото Домбайской поляны">
+                <div class="element__group">
+                <h2 class="element__title">Домбай</h2>
+                <img class="element__icon" src="./images/Like.png" alt="иконка сердца">
+                 </div>
+            </article>
+            <article class="element">
+                <img class="element__image" src="./images/Karachaevsk.png" alt="фото Карачаево-Черкессии">
+                <div class="element__group">
+                <h2 class="element__title">Карачаево-Черкессия</h2>
+                <img class="element__icon" src="./images/Like.png" alt="иконка сердца">
+                 </div>
+            </article>
+          </section>
+        </main>
+        <footer class="footer">
+            <p class="footer__copyright">&copy; 2020 Mesto Russia</p>
+        </footer>
+        <div class="popup">
+          <div class="popup__overlay"></div>
+            <div class="popup__content">
+              <div class="popup__close-button">
+                <img class="popup__close-icon" src="./images/Add.png" alt="иконка закрытия окна">
+              </div>
+              <h2 class="popup__title">Редактировать профиль</h2>
+              <div class="popup__edit">
+              <p class="popup__subtitle">Жак-Ив Кусто</p>
+              <p class="popup__subtitle">Исследователь океана</p>
+              </div>
+              <div class="popup__save-button">Сохранить</div>
+            </div>
+        </div>
+        <script src="../mesto/scripts/index.js"></script>
+</body>
+</html>

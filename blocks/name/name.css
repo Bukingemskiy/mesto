@@ -1,0 +1,9 @@
+.name:not(:first-child) {
+    margin-left: 18px;
+}
+
+@media screen and (max-width: 767px) {
+.name:not(:first-child) {
+    margin-left: 10px;
+}
+}

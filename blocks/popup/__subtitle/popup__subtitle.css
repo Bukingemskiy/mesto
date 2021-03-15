@@ -1,0 +1,12 @@
+.popup__subtitle {
+    margin: 0;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 17px;
+    border-bottom: 1px solid #000000;
+    min-height: 27px;
+}
+
+.popup__subtitle:not(:last-child) {
+    margin-bottom: 30px;
+}
