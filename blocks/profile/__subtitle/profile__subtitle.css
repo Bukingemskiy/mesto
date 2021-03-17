@@ -5,6 +5,13 @@
     font-weight: 400;
 }
 
+@media screen and (max-width: 1023px) {
+    .profile__subtitle {
+        font-size: 16px;
+        line-height: 20px;
+}
+}
+
 @media screen and (max-width: 767px) {
 .profile__subtitle {
     font-size: 14px;

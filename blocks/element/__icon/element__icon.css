@@ -3,4 +3,10 @@
     height: 19px;
     margin-right: 15px;
     cursor: pointer;
+    outline: none;
+    transition: opacity 1s ease;
 }
+
+.element__icon:hover {
+    opacity: 0.5;
+   }

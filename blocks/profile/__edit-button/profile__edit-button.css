@@ -2,11 +2,19 @@
    display: flex;
    justify-content: center;
    align-items: center;
-   width: 24px;
+   min-width: 24px;
    height: 24px;
    border: 1px solid #FFFFFF;
    cursor: pointer;
+   background-color: black;
+   padding: 0;
+   outline: none;
+   transition: opacity 1s ease;
 }
+
+.profile__edit-button:hover {
+    opacity: 0.5;
+   }
 
 @media screen and (max-width: 767px) {
    .profile__edit-button {

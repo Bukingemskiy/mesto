@@ -19,58 +19,58 @@
         <div class="profile__text">
         <div class="profile__name">
         <h1 class="profile__title name">Жак-Ив Кусто</h1>
-        <div class="profile__edit-button name">
+        <button class="profile__edit-button name" id="popup_open">
         <img class="profile__edit-icon" src="./images/Edit.png" alt="иконка изменения профиля">
-        </div>
+        </button>
         </div>
         <p class="profile__subtitle">Исследователь океана</p>
         </div>
         </div>
-        <div class="profile__add-button">
-          <img class="profile__add-icon" src="./images/Add.png" alt="иконка добавления фотографии">
-        </div>
+        <button class="profile__add-button">
+        <img class="profile__add-icon" src="./images/Add.png" alt="иконка добавления фотографии">
+        </button>
       </section>
       <section class="elements">
             <article class="element">
             <img class="element__image" src="./images/Karachaevsk.png" alt="фото Карачаево-Черкессии">
             <div class="element__group">
             <h2 class="element__title">Карачаевск</h2>
-            <img class="element__icon" src="./images/Like.png" alt="иконка сердца">
+            <input class="element__icon" type="image" src="./images/Like.png" alt="иконка сердца">
              </div>
             </article>
             <article class="element">
                 <img class="element__image" src="./images/Elbrus.png" alt="фото горы Эльбрус">
                 <div class="element__group">
                 <h2 class="element__title">Гора Эльбрус</h2>
-                <img class="element__icon" src="./images/Like.png" alt="иконка сердца">
+                <input class="element__icon" type="image" src="./images/Like.png" alt="иконка сердца">
                  </div>
             </article>
             <article class="element">
                 <img class="element__image" src="./images/Dombay.png" alt="фото Домбайской поляны">
                 <div class="element__group">
                 <h2 class="element__title">Домбай</h2>
-                <img class="element__icon" src="./images/Like.png" alt="иконка сердца">
+                <input class="element__icon" type="image" src="./images/Like.png" alt="иконка сердца">
                  </div>
             </article>
             <article class="element">
                 <img class="element__image" src="./images/Elbrus.png" alt="фото горы Эльбрус">
                 <div class="element__group">
                 <h2 class="element__title">Гора Эльбрус</h2>
-                <img class="element__icon" src="./images/Like.png" alt="иконка сердца">
+                <input class="element__icon" type="image" src="./images/Like.png" alt="иконка сердца">
                  </div>
             </article>
             <article class="element">
                 <img class="element__image" src="./images/Dombay.png" alt="фото Домбайской поляны">
                 <div class="element__group">
                 <h2 class="element__title">Домбай</h2>
-                <img class="element__icon" src="./images/Like.png" alt="иконка сердца">
+                <input class="element__icon" type="image" src="./images/Like.png" alt="иконка сердца">
                  </div>
             </article>
             <article class="element">
                 <img class="element__image" src="./images/Karachaevsk.png" alt="фото Карачаево-Черкессии">
                 <div class="element__group">
                 <h2 class="element__title">Карачаево-Черкессия</h2>
-                <img class="element__icon" src="./images/Like.png" alt="иконка сердца">
+                <input class="element__icon" type="image" src="./images/Like.png" alt="иконка сердца">
                  </div>
             </article>
           </section>
@@ -81,15 +81,13 @@
         <div class="popup">
           <div class="popup__overlay"></div>
             <div class="popup__content">
-              <div class="popup__close-button">
-                <img class="popup__close-icon" src="./images/Add.png" alt="иконка закрытия окна">
-              </div>
+              <input class="popup__close-button" type="image" src="./images/Add.png" alt="иконка закрытия окна">
               <h2 class="popup__title">Редактировать профиль</h2>
               <div class="popup__edit">
-              <p class="popup__subtitle">Жак-Ив Кусто</p>
-              <p class="popup__subtitle">Исследователь океана</p>
+              <input class="popup__subtitle" type="text" maxlength="17" id="popup_name">
+              <input class="popup__subtitle" type="text" maxlength="34" id="popup_text">
               </div>
-              <div class="popup__save-button">Сохранить</div>
+              <button class="popup__save-button">Сохранить</button>
             </div>
         </div>
         <script src="../mesto/scripts/index.js"></script>

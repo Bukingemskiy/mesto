@@ -3,8 +3,11 @@
     font-weight: 400;
     font-size: 14px;
     line-height: 17px;
+    border: none;
     border-bottom: 1px solid #000000;
     min-height: 27px;
+    padding: 0;
+    outline: none;
 }
 
 .popup__subtitle:not(:last-child) {
