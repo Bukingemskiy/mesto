@@ -10,6 +10,6 @@
     outline: none;
 }
 
-.popup__subtitle:not(:last-child) {
+.popup__subtitle:first-child {
     margin-bottom: 30px;
 }

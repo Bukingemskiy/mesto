@@ -1,17 +1,17 @@
 let popup = document.querySelector('.popup');
 let editPopupBtn = document.querySelector('.profile__edit-button');
 let closePopupBtn = document.querySelector('.popup__close-button');
-let savePopupBtn = document.querySelector('.popup__save-button');
 let PopupName = document.getElementById('popup_name');
 let PopupText = document.getElementById('popup_text');
 let title = document.querySelector('.profile__title');
 let subtitle = document.querySelector('.profile__subtitle');
+let PopupEdit = document.querySelector('.popup__edit');
 
 function openPopup() {
     popup.classList.add('popup_visible');
     document.addEventListener("keyup", function(event) {
         if (event.key === "Enter" && popup.classList.contains('popup_visible')) {
-          savePopupBtn.click();
+          PopupEdit.submit();
         }
       });
 }
@@ -37,4 +37,4 @@ function formSubmitHandler (evt) {
 
 editPopupBtn.addEventListener('click', editPopup);
 closePopupBtn.addEventListener('click', closePopup);
-savePopupBtn.addEventListener('click', formSubmitHandler);
+PopupEdit.addEventListener('submit', formSubmitHandler);
