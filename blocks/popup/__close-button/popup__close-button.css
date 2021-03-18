@@ -7,11 +7,12 @@
     right: -40px;
     transform: rotate(45deg);
     cursor: pointer;
-    transition: opacity 1.2s ease;
+    transition: opacity 1s ease;
+    outline: none;
 }
 
 .popup__close-button:hover {
-    opacity: 0.6;
+    opacity: 0.5;
    }
 
 @media screen and (max-width: 767px) {
