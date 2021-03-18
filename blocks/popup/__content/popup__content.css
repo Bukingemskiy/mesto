@@ -1,7 +1,7 @@
 .popup__content {
-    position: absolute;
+    position: relative;
     min-width: 430px;
-    min-height: 330px;
+    height: 330px;
     left: 50%;
     transform: translateX(-50%);
     background-color: white;
