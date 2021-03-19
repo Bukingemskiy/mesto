@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Mesto</title>
+  <title>Место</title>
   <link rel="stylesheet" href="./pages/index.css">
 </head>
 <body class="page">
@@ -13,64 +13,58 @@
     <main class="content">
       <section class="profile">
         <div class="profile__info">
-        <div class="profile__avatar-square">
         <img class="profile__avatar" src="./images/Kusto.jpg" alt="аватар профиля">
-       </div>
         <div class="profile__text">
         <div class="profile__name">
-        <h1 class="profile__title name">Жак-Ив Кусто</h1>
-        <button class="profile__edit-button name">
-        <img class="profile__edit-icon" src="./images/Edit.png" alt="иконка изменения профиля">
-        </button>
+        <h1 class="profile__title">Жак-Ив Кусто</h1>
+        <button class="profile__edit-button" type="button"></button>
         </div>
         <p class="profile__subtitle">Исследователь океана</p>
         </div>
         </div>
-        <button class="profile__add-button">
-        <img class="profile__add-icon" src="./images/Add.png" alt="иконка добавления фотографии">
-        </button>
+        <button class="profile__add-button" type="button"></button>
       </section>
       <section class="elements">
             <article class="element">
             <img class="element__image" src="./images/Karachaevsk.png" alt="фото Карачаево-Черкессии">
             <div class="element__group">
             <h2 class="element__title">Карачаевск</h2>
-            <button class="element__icon"></button>
+            <button class="element__icon" type="button"></button>
              </div>
             </article>
             <article class="element">
                 <img class="element__image" src="./images/Elbrus.png" alt="фото горы Эльбрус">
                 <div class="element__group">
                 <h2 class="element__title">Гора Эльбрус</h2>
-                <button class="element__icon"></button>
+                <button class="element__icon" type="button"></button>
                  </div>
             </article>
             <article class="element">
                 <img class="element__image" src="./images/Dombay.png" alt="фото Домбайской поляны">
                 <div class="element__group">
                 <h2 class="element__title">Домбай</h2>
-                <button class="element__icon"></button>
+                <button class="element__icon" type="button"></button>
                  </div>
             </article>
             <article class="element">
                 <img class="element__image" src="./images/Elbrus.png" alt="фото горы Эльбрус">
                 <div class="element__group">
                 <h2 class="element__title">Гора Эльбрус</h2>
-                <button class="element__icon"></button>
+                <button class="element__icon" type="button"></button>
                  </div>
             </article>
             <article class="element">
                 <img class="element__image" src="./images/Dombay.png" alt="фото Домбайской поляны">
                 <div class="element__group">
                 <h2 class="element__title">Домбай</h2>
-                <button class="element__icon"></button>
+                <button class="element__icon" type="button"></button>
                  </div>
             </article>
             <article class="element">
                 <img class="element__image" src="./images/Karachaevsk.png" alt="фото Карачаево-Черкессии">
                 <div class="element__group">
                 <h2 class="element__title">Карачаево-Черкессия</h2>
-                <button class="element__icon"></button>
+                <button class="element__icon" type="button"></button>
                  </div>
             </article>
           </section>
@@ -79,13 +73,12 @@
             <p class="footer__copyright">&copy; 2020 Mesto Russia</p>
         </footer>
         <div class="popup">
-          <div class="popup__overlay"></div>
             <div class="popup__content">
-              <input class="popup__close-button" type="image" src="./images/Add.png" alt="иконка закрытия окна">
+              <button class="popup__close-button" type="button"></button>
               <h2 class="popup__title">Редактировать профиль</h2>
-              <form class="popup__edit">
-              <input class="popup__subtitle" type="text" maxlength="17" id="popup_name">
-              <input class="popup__subtitle" type="text" maxlength="34" id="popup_text">
+              <form class="popup__edit" name="Профиль">
+              <input class="popup__input" type="text" name="Имя" maxlength="17" id="popup_name">
+              <input class="popup__input" type="text" name="О себе" maxlength="34" id="popup_text">
               <button class="popup__save-button" type="submit">Сохранить</button>
             </form>
             </div>

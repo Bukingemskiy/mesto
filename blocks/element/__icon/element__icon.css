@@ -4,7 +4,7 @@
     margin: 30px 20px 30px 5px;
     cursor: pointer;
     transition: opacity 1s ease;
-    background-image: url(../../../images/Like.png);
+    background-image: url(../../../images/Like.svg);
     background-color: white;
     padding: 0;
     border: 0;
@@ -16,5 +16,5 @@
    }
 
 .element__icon:active {
-    background-image: url(../../../images/Like\ active.png);
+    background-image: url(../../../images/Like-active.svg);
    }

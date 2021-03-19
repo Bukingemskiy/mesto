@@ -1,7 +1,7 @@
 .header__logo {
     width: 142px;
     height: 33px;
-    background-image: url(../../../images/Mesto.png);
+    background-image: url(../../../images/Mesto.svg);
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
@@ -12,10 +12,10 @@
 .header__logo {
     width: 103.74px;
     height: 24.4px;
-    margin-left: 8px;
+    margin-left: 27px;
 }
 }
 
 .header__logo:hover {
-    background-image: url(../../../images/Mesto\ black.png);
+    background-image: url(../../../images/Mesto-black.svg);
 }

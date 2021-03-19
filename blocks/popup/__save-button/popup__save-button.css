@@ -11,7 +11,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-top: 48px;
+    margin: 48px 0 37px;
     cursor: pointer;
     padding: 0;
     outline: none;
@@ -19,14 +19,14 @@
 }
 
 .popup__save-button:hover {
-    opacity: 0.7;
+    opacity: 0.8;
    }
 
 @media screen and (max-width: 767px) {
 .popup__save-button {
     width: 238px;
     height: 46px;
-    margin-top: 45px;
+    margin: 45px 0 25px;
     font-size: 14px;
     line-height: 17px;
 }

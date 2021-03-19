@@ -10,6 +10,11 @@
    padding: 0;
    outline: none;
    transition: opacity 1s ease;
+   margin: 0 18px;
+   background-image: url(../../../images/Edit.svg);
+   background-size: 10px;
+   background-repeat: no-repeat;
+   background-position: center;;
 }
 
 .profile__edit-button:hover {
@@ -20,5 +25,7 @@
    .profile__edit-button {
    width: 18px;
    height: 18px;
-   }
-   }
+   margin: 0 0 0 10px;
+   background-size: 7.5px;
+}
+}
