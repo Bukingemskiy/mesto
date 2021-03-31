@@ -13,76 +13,63 @@
     <main class="content">
       <section class="profile">
         <div class="profile__info">
-        <img class="profile__avatar" src="./images/Kusto.jpg" alt="аватар профиля">
-        <div class="profile__text">
-        <div class="profile__name">
-        <h1 class="profile__title">Жак-Ив Кусто</h1>
-        <button class="profile__edit-button" type="button" aria-label="Редактировать"></button>
-        </div>
-        <p class="profile__subtitle">Исследователь океана</p>
-        </div>
+          <img class="profile__avatar" src="./images/Kusto.jpg" alt="аватар профиля">
+          <div class="profile__text">
+            <div class="profile__name">
+              <h1 class="profile__title">Жак-Ив Кусто</h1>
+              <button class="profile__edit-button" type="button" aria-label="Редактировать"></button>
+            </div>
+            <p class="profile__subtitle">Исследователь океана</p>
+          </div>
         </div>
         <button class="profile__add-button" type="button" aria-label="Добавить"></button>
       </section>
-      <section class="elements">
-            <article class="element">
-            <img class="element__image" src="./images/Karachaevsk.png" alt="фото Карачаево-Черкессии">
-            <div class="element__group">
-            <h2 class="element__title">Карачаевск</h2>
-            <button class="element__icon" type="button" aria-label="Нравится"></button>
-            </div>
-            </article>
-            <article class="element">
-                <img class="element__image" src="./images/Elbrus.png" alt="фото горы Эльбрус">
-                <div class="element__group">
-                <h2 class="element__title">Гора Эльбрус</h2>
-                <button class="element__icon" type="button" aria-label="Нравится"></button>
-                 </div>
-            </article>
-            <article class="element">
-                <img class="element__image" src="./images/Dombay.png" alt="фото Домбайской поляны">
-                <div class="element__group">
-                <h2 class="element__title">Домбай</h2>
-                <button class="element__icon" type="button" aria-label="Нравится"></button>
-                 </div>
-            </article>
-            <article class="element">
-                <img class="element__image" src="./images/Elbrus.png" alt="фото горы Эльбрус">
-                <div class="element__group">
-                <h2 class="element__title">Гора Эльбрус</h2>
-                <button class="element__icon" type="button" aria-label="Нравится"></button>
-                 </div>
-            </article>
-            <article class="element">
-                <img class="element__image" src="./images/Dombay.png" alt="фото Домбайской поляны">
-                <div class="element__group">
-                <h2 class="element__title">Домбай</h2>
-                <button class="element__icon" type="button" aria-label="Нравится"></button>
-                 </div>
-            </article>
-            <article class="element">
-                <img class="element__image" src="./images/Karachaevsk.png" alt="фото Карачаево-Черкессии">
-                <div class="element__group">
-                <h2 class="element__title">Карачаево-Черкессия</h2>
-                <button class="element__icon" type="button" aria-label="Нравится"></button>
-                 </div>
-            </article>
-          </section>
-        </main>
-        <footer class="footer">
-            <p class="footer__copyright">&copy; 2020 Mesto Russia</p>
-        </footer>
-        <div class="popup">
-            <div class="popup__content">
-              <button class="popup__close-button" type="button" aria-label="Закрыть"></button>
-              <h2 class="popup__title">Редактировать профиль</h2>
-              <form class="popup__edit" name="Профиль">
-              <input class="popup__input" type="text" name="Имя" maxlength="17" id="popup_name">
-              <input class="popup__input" type="text" name="О себе" maxlength="34" id="popup_text">
-              <button class="popup__save-button" type="submit">Сохранить</button>
-            </form>
-            </div>
+      <section class="elements"></section>
+    </main>
+    <footer class="footer">
+      <p class="footer__copyright">&copy; 2020 Mesto Russia</p>
+    </footer>
+    <div class="popup" id="edit_popup">
+      <div class="popup__content">
+        <button class="popup__close-button" type="button" aria-label="Закрыть"></button>
+        <h2 class="popup__title">Редактировать профиль</h2>
+        <form class="popup__edit" name="Профиль" id="popup_edit">
+          <input class="popup__input" type="text" name="Имя" maxlength="17" id="popup_name">
+          <input class="popup__input" type="text" name="О себе" maxlength="34" id="popup_text">
+          <button class="popup__save-button" type="submit">Сохранить</button>
+        </form>
+      </div>
+    </div>
+    <div class="popup" id="add_popup">
+      <div class="popup__content">
+        <button class="popup__close-button" type="button" aria-label="Закрыть"></button>
+        <h2 class="popup__title">Новое место</h2>
+        <form class="popup__edit" name="Добавить фото" id="popup_add">
+          <input class="popup__input" placeholder="Название" type="text" name="Название" id="popup_title">
+          <input class="popup__input" placeholder="Ссылка на картинку" type="text" name="Ссылка на картинку" id="popup_link">
+          <button class="popup__save-button" type="submit">Сохранить</button>
+        </form>
+      </div>
+    </div>
+    <div class="popup popup_opacity" id="image_popup">
+      <div class="popup__image-content">
+        <button class="popup__close-button" type="button" aria-label="Закрыть"></button>
+        <figure class="popup__figure">
+          <img class="popup__image" src="">
+          <figcaption class="popup__image-caption"></figcaption>
+        </figure>
+      </div>
+    </div>
+    <template class="element-item-template">
+      <article class="element">
+        <button class="element__delete" type="button" aria-label="Удалить"></button>  
+        <img src="" class="element__image">
+        <div class="element__group">
+          <h2 class="element__title"></h2>
+          <button class="element__icon" type="button" aria-label="Нравится"></button>
         </div>
-        <script src="./scripts/index.js"></script>
+      </article>
+    </template>
+    <script src="./scripts/index.js"></script>
 </body>
 </html>

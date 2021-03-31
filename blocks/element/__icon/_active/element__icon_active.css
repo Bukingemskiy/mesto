@@ -1,16 +1,16 @@
-.element__icon {
+.element__icon_active {
     min-width: 22px;
     height: 19px;
     margin: 30px 20px 30px 5px;
     cursor: pointer;
     transition: opacity 1s ease;
-    background-image: url(../../../images/Like.svg);
+    background-image: url(../../../../images/Like-active.svg);
     background-color: white;
     padding: 0;
     border: 0;
     outline: none;
 }
 
-.element__icon:hover {
+.element__icon_active:hover {
     opacity: 0.5;
 }
