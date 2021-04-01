@@ -18,102 +18,102 @@ const popupImage = document.querySelector('.popup__image');
 const imageCaption = document.querySelector('.popup__image-caption');
 const elements = document.querySelector('.elements');
 const elementItemTemplate = document.querySelector('.element-item-template').content;
-const initialCards = [
+const initialElements = [
     {
-      name: 'Архыз',
-      link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/arkhyz.jpg'
+        name: 'Архыз',
+        link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/arkhyz.jpg',
     },
     {
-      name: 'Челябинская область',
-      link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/chelyabinsk-oblast.jpg'
+        name: 'Челябинская область',
+        link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/chelyabinsk-oblast.jpg',
     },
     {
-      name: 'Иваново',
-      link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/ivanovo.jpg'
+        name: 'Иваново',
+        link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/ivanovo.jpg',
     },
     {
-      name: 'Камчатка',
-      link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kamchatka.jpg'
+        name: 'Камчатка',
+        link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kamchatka.jpg',
     },
     {
-      name: 'Холмогорский район',
-      link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kholmogorsky-rayon.jpg'
+        name: 'Холмогорский район',
+        link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kholmogorsky-rayon.jpg',
     },
     {
-      name: 'Байкал',
-      link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/baikal.jpg'
-    }
-  ];
-const cards = initialCards.forEach(item => {
-  insertElement(item);
-});
+        name: 'Байкал',
+        link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/baikal.jpg',
+    },
+];
 
-function insertElement(item) {
-  const elementItem = elementItemTemplate.cloneNode(true);
+initialElements.forEach(addElement);
+
+function addElement(element) {
+    const elementItem = createElementItem(element);
+    elements.prepend(elementItem);
+}
+
+function createElementItem(item) {
+    const elementItem = elementItemTemplate.cloneNode(true);
     elementItem.querySelector('.element__title').textContent = item.name;
     elementItem.querySelector('.element__image').src = item.link;
     elementItem.querySelector('.element__icon').addEventListener('click', function (evt) {
-  const eventTargetLike = evt.target;
-    eventTargetLike.classList.toggle('element__icon_active');
-  });
-  const deleteBtn = elementItem.querySelector('.element__delete');
+        const eventTargetLike = evt.target;
+        eventTargetLike.classList.toggle('element__icon_active');
+    });
+    const deleteBtn = elementItem.querySelector('.element__delete');
     deleteBtn.addEventListener('click', function () {
-    deleteBtn.closest('.element').remove();
-  });
-  const elementImage = elementItem.querySelector('.element__image');
+        deleteBtn.closest('.element').remove();
+    });
+    const elementImage = elementItem.querySelector('.element__image');
     elementImage.addEventListener('click', openImagePopup);
-    elements.prepend(elementItem)
-  }
+    return elementItem;
+}
 
 function openPopup(popup) {
-  popup.classList.add('popup_visible');
+    popup.classList.add('popup_visible');
 }
 
 function closePopup(popup) {
-  popup.classList.remove('popup_visible');
-  popup.classList.add('popup__transition');
+    popup.classList.remove('popup_visible');
+    popup.classList.add('popup__transition');
 }
 
 function openEditPopup() {
-  popupName.value=title.textContent;
-  popupText.value=subtitle.textContent;
-  openPopup(editPopup);
+    popupName.value = title.textContent;
+    popupText.value = subtitle.textContent;
+    openPopup(editPopup);
 }
 
-function editFormSubmitHandler (evt) {
-  evt.preventDefault();
-  title.textContent = popupName.value;
-  subtitle.textContent = popupText.value;
-  closePopup(editPopup);
+function editFormSubmitHandler(evt) {
+    evt.preventDefault();
+    title.textContent = popupName.value;
+    subtitle.textContent = popupText.value;
+    closePopup(editPopup);
 }
 
 function openAddPopup() {
-  addNameInput.value='';
-  addLinkInput.value='';
-  openPopup(addPopup);
+    addNameInput.value = '';
+    addLinkInput.value = '';
+    openPopup(addPopup);
 }
 
-function addFormSubmitHandler (evt) {
-  evt.preventDefault();
-const card = [
-  {
-    name: addNameInput.value,
-    link: addLinkInput.value
-  }
-];
-  card.forEach(item => {
-  insertElement(item);
-  closePopup(addPopup);
-});
+function addFormSubmitHandler(evt) {
+    evt.preventDefault();
+    const element = {
+        name: addNameInput.value,
+        link: addLinkInput.value,
+    };
+    addElement(element);
+    closePopup(addPopup);
 }
 
 function openImagePopup(evt) {
-const eventTargetImage = evt.target.parentElement;
-const image = eventTargetImage.querySelector('.element__image');
-const caption = eventTargetImage.querySelector('.element__title');
-  popupImage.src = image.src;
-  imageCaption.textContent = caption.textContent;
-  openPopup(imagePopup);
+    const eventTargetImage = evt.target.parentElement;
+    const image = eventTargetImage.querySelector('.element__image');
+    const caption = eventTargetImage.querySelector('.element__title');
+    popupImage.src = image.src;
+    imageCaption.textContent = caption.textContent;
+    openPopup(imagePopup);
 }
 
 editPopupBtn.addEventListener('click', openEditPopup);
