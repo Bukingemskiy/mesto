@@ -5,3 +5,15 @@
     max-width: 880px;
     margin: 0 auto;
 }
+
+@media screen and (max-width: 1023px) {
+    .page {
+        max-width: 660px;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .page {
+        max-width: 282px;
+    }
+}

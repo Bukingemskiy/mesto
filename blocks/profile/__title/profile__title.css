@@ -3,19 +3,19 @@
     font-weight: 500;
     font-size: 42px;
     line-height: 48px;
-    white-space: nowrap;
 }
 
 @media screen and (max-width: 1023px) {
-.profile__title {
-    font-size: 35px;
-    line-height: 26px;
-}
+    .profile__title {
+        font-size: 33px;
+        line-height: 39px;
+    }
 }
 
 @media screen and (max-width: 767px) {
     .profile__title {
-    font-size: 27px;
-    line-height: 33px;
-}
+        font-size: 27px;
+        line-height: 33px;
+        text-align: center;
+    }
 }

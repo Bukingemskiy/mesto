@@ -4,12 +4,14 @@
     font-size: 14px;
     line-height: 17px;
     border: none;
-    border-bottom: 1px solid rgba(0,0,0,.2);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
     min-height: 27px;
+    min-width: 100%;
     padding: 0;
     outline: none;
 }
 
-.popup__input:first-child {
-    margin-bottom: 30px;
+.popup__input:focus {
+    border: 1px solid #4747cc;
+    outline: none;
 }

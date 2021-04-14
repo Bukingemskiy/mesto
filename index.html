@@ -33,25 +33,39 @@
       <div class="popup__content">
         <button class="popup__close-button" type="button" aria-label="Закрыть"></button>
         <h2 class="popup__title">Редактировать профиль</h2>
-        <form class="popup__edit" name="Профиль" id="popup_edit">
-          <input class="popup__input" type="text" name="Имя" maxlength="17" id="popup_name">
-          <input class="popup__input" type="text" name="О себе" maxlength="34" id="popup_text">
+        <form class="popup__edit" name="Профиль" id="popup_edit" novalidate>
+          <section class="popup__section">
+          <input class="popup__input" type="text" name="Имя" minlength="2" maxlength="40" id="popup_name" required>
+          <span class="popup__input-error" id="popup_name-error"></span>
+          </section>
+          <section class="popup__section">
+          <input class="popup__input" type="text" name="О себе" minlength="2" maxlength="200" id="popup_text" required>
+          <span class="popup__input-error" id="popup_text-error"></span>
+          </section>
           <button class="popup__save-button" type="submit">Сохранить</button>
         </form>
       </div>
     </div>
     <div class="popup" id="add_popup">
+      <div class="popup__overlay"></div>
       <div class="popup__content">
         <button class="popup__close-button" type="button" aria-label="Закрыть"></button>
         <h2 class="popup__title">Новое место</h2>
-        <form class="popup__edit" name="Добавить фото" id="popup_add">
-          <input class="popup__input" placeholder="Название" type="text" name="Название" id="popup_title">
-          <input class="popup__input" placeholder="Ссылка на картинку" type="text" name="Ссылка на картинку" id="popup_link">
-          <button class="popup__save-button" type="submit">Сохранить</button>
+        <form class="popup__edit" name="Добавить фото" id="popup_add" novalidate>
+          <section class="popup__section">
+          <input class="popup__input" placeholder="Название" type="text" name="Название" id="popup_title" minlength="2" maxlength="30" required>
+          <span class="popup__input-error" id="popup_title-error"></span>
+          </section>
+          <section class="popup__section">
+          <input class="popup__input" placeholder="Ссылка на картинку" type="url" name="Ссылка на картинку" id="popup_link" required>
+          <span class="popup__input-error" id="popup_link-error"></span>
+          </section>
+          <button class="popup__save-button popup__save-button_disabled" type="submit" disabled="disabled">Сохранить</button>
         </form>
       </div>
     </div>
     <div class="popup popup_opacity" id="image_popup">
+      <div class="popup__overlay"></div>
       <div class="popup__image-content">
         <button class="popup__close-button" type="button" aria-label="Закрыть"></button>
         <figure class="popup__figure">
@@ -71,5 +85,6 @@
       </article>
     </template>
     <script src="./scripts/index.js"></script>
+    <script src="./scripts/validate.js"></script>
 </body>
 </html>
