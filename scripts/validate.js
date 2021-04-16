@@ -19,6 +19,22 @@ const isValid = (formElement, inputElement, inputErrorClass, errorClass) => {
     }
 };
 
+const hasInvalidInput = (inputList) => {
+    return inputList.some((inputElement) => {
+        return !inputElement.validity.valid;
+    });
+};
+
+const toggleButtonState = (inputList, buttonElement, inactiveButtonClass) => {
+    if (hasInvalidInput(inputList)) {
+        buttonElement.classList.add(inactiveButtonClass);
+        buttonElement.setAttribute('disabled', 'disabled');
+    } else {
+        buttonElement.classList.remove(inactiveButtonClass);
+        buttonElement.removeAttribute('disabled', 'disabled');
+    }
+};
+
 const setEventListeners = (
     formElement,
     inputSelector,
@@ -69,19 +85,3 @@ enableValidation({
     inputErrorClass: 'popup__input_error-type',
     errorClass: 'popup__input-error_active',
 });
-
-const hasInvalidInput = (inputList) => {
-    return inputList.some((inputElement) => {
-        return !inputElement.validity.valid;
-    });
-};
-
-const toggleButtonState = (inputList, buttonElement, inactiveButtonClass) => {
-    if (hasInvalidInput(inputList)) {
-        buttonElement.classList.add(inactiveButtonClass);
-        buttonElement.setAttribute('disabled', 'disabled');
-    } else {
-        buttonElement.classList.remove(inactiveButtonClass);
-        buttonElement.removeAttribute('disabled', 'disabled');
-    }
-};
