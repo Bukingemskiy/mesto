@@ -2,29 +2,25 @@ const title = document.querySelector('.profile__title');
 const subtitle = document.querySelector('.profile__subtitle');
 const elements = document.querySelector('.elements');
 const elementItemTemplate = document.querySelector('.element-item-template').content;
-const editPopup = document.getElementById('edit_popup');
-const addPopup = document.getElementById('add_popup');
-const imagePopup = document.getElementById('image_popup');
+const editPopup = document.querySelector('.popup__edit-profile');
+const addPopup = document.querySelector('.popup__add-card');
+const imagePopup = document.querySelector('.popup__image-card');
 const addPopupBtn = document.querySelector('.profile__add-button');
 const editPopupBtn = document.querySelector('.profile__edit-button');
-const popupEdit = document.getElementById('popup_edit');
-const popupAdd = document.getElementById('popup_add');
+const popupEdit = document.querySelector('.popup__edit-form');
+const popupAdd = document.querySelector('.popup__add-form');
 const popupEditSaveBtn = popupEdit.querySelector('.popup__save-button');
 const popupAddSaveBtn = popupAdd.querySelector('.popup__save-button');
 const stringInactiveButtonClass = 'popup__save-button_disabled';
 const popupEditCloseBtn = editPopup.querySelector('.popup__close-button');
 const popupAddCloseBtn = addPopup.querySelector('.popup__close-button');
 const popupImageCloseBtn = imagePopup.querySelector('.popup__close-button');
-const popupOverlay = document.querySelector('.popup__overlay');
-const formElement = document.querySelector('.popup__edit');
-const formInput = formElement.querySelector('.popup__input');
 const popupName = document.getElementById('popup_name');
 const popupText = document.getElementById('popup_text');
 const addNameInput = document.getElementById('popup_title');
 const addLinkInput = document.getElementById('popup_link');
 const inputEditList = Array.from(editPopup.querySelectorAll('.popup__input'));
 const inputAddList = Array.from(addPopup.querySelectorAll('.popup__input'));
-const formError = formElement.querySelector(`#${formInput.id}-error`);
 const popupImage = document.querySelector('.popup__image');
 const imageCaption = document.querySelector('.popup__image-caption');
 
@@ -96,6 +92,7 @@ function closePopup(popup) {
     popup.classList.remove('popup_visible');
     popup.classList.add('popup__transition');
     document.removeEventListener('keydown', closePopupEsc);
+    popup.removeEventListener('click', closePopupOverlay);
 }
 
 function closePopupOverlay(evt) {
