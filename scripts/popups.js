@@ -5,14 +5,14 @@ import Card from './Card.js';
 export function openPopup(popup) {
     popup.classList.add('popup_visible');
     document.addEventListener('keydown', closePopupEsc);
-    popup.addEventListener('click', closePopupOverlay);
+    popup.addEventListener('click', closeOnOverlayOrCross);
 }
 
 export function closePopup(popup) {
     popup.classList.remove('popup_visible');
     popup.classList.add('popup__transition');
     document.removeEventListener('keydown', closePopupEsc);
-    popup.removeEventListener('click', closePopupOverlay);
+    popup.removeEventListener('click', closeOnOverlayOrCross);
 }
 
 function closePopupEsc(evt) {
@@ -22,7 +22,7 @@ function closePopupEsc(evt) {
     }
 }
 
-function closePopupOverlay(evt) {
+function closeOnOverlayOrCross(evt) {
     const popup = document.querySelector('.popup_visible');
     if (evt.target.classList.contains('popup') || evt.target.classList.contains('popup__close-button')) {
         closePopup(popup);
@@ -79,18 +79,8 @@ function addFormSubmitHandler(evt) {
 export function setEventListeners() {
     const editPopupBtn = document.querySelector('.profile__edit-button');
     const addPopupBtn = document.querySelector('.profile__add-button');
-    const popupEditCloseBtn = editPopup.querySelector('.popup__close-button');
-    const popupAddCloseBtn = addPopup.querySelector('.popup__close-button');
     editPopupBtn.addEventListener('click', openEditPopup);
     addPopupBtn.addEventListener('click', openAddPopup);
     popupEdit.addEventListener('submit', editFormSubmitHandler);
     popupAdd.addEventListener('submit', addFormSubmitHandler);
-    popupEditCloseBtn.addEventListener('click', function (evt) {
-        closePopup(editPopup);
-        evt.stopPropagation();
-    });
-    popupAddCloseBtn.addEventListener('click', function (evt) {
-        closePopup(addPopup);
-        evt.stopPropagation();
-    });
 }

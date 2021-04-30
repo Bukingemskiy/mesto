@@ -12,6 +12,7 @@ export default class Card {
         const popupImage = document.querySelector('.popup__image');
         const imageCaption = document.querySelector('.popup__image-caption');
         popupImage.src = this._image;
+        popupImage.alt = this._title;
         imageCaption.textContent = this._title;
         openPopup(imagePopup);
     }
@@ -46,6 +47,7 @@ export default class Card {
         this._setEventListeners();
         this._element.querySelector('.element__title').textContent = this._title;
         this._element.querySelector('.element__image').src = this._image;
+        this._element.querySelector('.element__image').alt = this._title;
         return this._element;
     }
 }
