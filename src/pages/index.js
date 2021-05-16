@@ -34,15 +34,15 @@ function handleCardClick(title, image) {
 
 const createCard = (items) => {
     const card = new Card(items, cardSelector, handleCardClick);
-    const cardElement = card.generateCard();
-    defaultCards.addItem(cardElement);
+    return card.generateCard();
 };
 
 const defaultCards = new Section(
     {
         items: initialElements,
         renderer: (item) => {
-            createCard(item);
+            const cardElement = createCard(item);
+            defaultCards.addItem(cardElement);
         },
     },
     cardListSelector
@@ -73,16 +73,7 @@ function handlerFormAdd(data) {
         name: data.title,
         link: data.link,
     };
-    const section = new Section(
-        {
-            items: [element],
-            renderer: (item) => {
-                createCard(item);
-            },
-        },
-        cardListSelector
-    );
-    section.renderItems();
+    defaultCards.addItem(createCard(element));
     popupWithFormAdd.close();
 }
 
@@ -91,15 +82,13 @@ addValidator.enableValidation();
 
 document.querySelector(editPopupBtn).addEventListener('click', () => {
     const profile = userInfo.getUserInfo();
-    document.getElementById(popupName).value = profile.name;
-    document.getElementById(popupText).value = profile.info;
-    popupWithFormEdit.clearPopupErrors();
+    popupName.value = profile.name;
+    popupText.value = profile.info;
     popupWithFormEdit.open();
     editValidator.toggleButtonState();
 });
 
 document.querySelector(addPopupBtn).addEventListener('click', () => {
-    popupWithFormAdd.clearPopupErrors();
     popupWithFormAdd.open();
     addValidator.toggleButtonState();
 });

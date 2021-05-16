@@ -1,4 +1,11 @@
 export default class FormValidator {
+    static selectors = {
+        popupInput: '.popup__input',
+        inputError: '.popup__input-error',
+        inputErrorType: 'popup__input_error-type',
+        inputErrorActive: 'popup__input-error_active',
+    };
+
     constructor(data, form) {
         this._formSelector = data.formSelector;
         this._inputSelector = data.inputSelector;
@@ -8,6 +15,7 @@ export default class FormValidator {
         this._errorClass = data.errorClass;
         this._form = form;
         this._inputList = Array.from(this._form.querySelectorAll(this._inputSelector));
+        this._buttonElement = this._form.querySelector(this._submitButtonSelector);
     }
 
     _showInputError = (inputElement, errorMessage) => {
@@ -38,13 +46,12 @@ export default class FormValidator {
     };
 
     toggleButtonState = () => {
-        const buttonElement = this._form.querySelector(this._submitButtonSelector);
         if (this._hasInvalidInput(this._inputList)) {
-            buttonElement.classList.add(this._inactiveButtonClass);
-            buttonElement.setAttribute('disabled', 'disabled');
+            this._buttonElement.classList.add(this._inactiveButtonClass);
+            this._buttonElement.setAttribute('disabled', 'disabled');
         } else {
-            buttonElement.classList.remove(this._inactiveButtonClass);
-            buttonElement.removeAttribute('disabled', 'disabled');
+            this._buttonElement.classList.remove(this._inactiveButtonClass);
+            this._buttonElement.removeAttribute('disabled', 'disabled');
         }
     };
 
@@ -53,6 +60,16 @@ export default class FormValidator {
             inputElement.addEventListener('input', () => {
                 this._isValid(inputElement);
                 this.toggleButtonState();
+            });
+        });
+        this._form.addEventListener('reset', () => {
+            const popupInputs = this._form.querySelectorAll(FormValidator.selectors.popupInput);
+            const popupSpans = this._form.querySelectorAll(FormValidator.selectors.inputError);
+            popupInputs.forEach((popupInput) => {
+                popupInput.classList.remove(FormValidator.selectors.inputErrorType);
+            });
+            popupSpans.forEach((popupSpan) => {
+                popupSpan.classList.remove(FormValidator.selectors.inputErrorActive);
             });
         });
     };
