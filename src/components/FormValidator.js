@@ -16,6 +16,8 @@ export default class FormValidator {
         this._form = form;
         this._inputList = Array.from(this._form.querySelectorAll(this._inputSelector));
         this._buttonElement = this._form.querySelector(this._submitButtonSelector);
+        this._popupInputs = this._form.querySelectorAll(FormValidator.selectors.popupInput);
+        this._popupSpans = this._form.querySelectorAll(FormValidator.selectors.inputError);
     }
 
     _showInputError = (inputElement, errorMessage) => {
@@ -63,12 +65,10 @@ export default class FormValidator {
             });
         });
         this._form.addEventListener('reset', () => {
-            const popupInputs = this._form.querySelectorAll(FormValidator.selectors.popupInput);
-            const popupSpans = this._form.querySelectorAll(FormValidator.selectors.inputError);
-            popupInputs.forEach((popupInput) => {
+            this._popupInputs.forEach((popupInput) => {
                 popupInput.classList.remove(FormValidator.selectors.inputErrorType);
             });
-            popupSpans.forEach((popupSpan) => {
+            this._popupSpans.forEach((popupSpan) => {
                 popupSpan.classList.remove(FormValidator.selectors.inputErrorActive);
             });
         });
