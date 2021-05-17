@@ -1,11 +1,4 @@
 export default class FormValidator {
-    static selectors = {
-        popupInput: '.popup__input',
-        inputError: '.popup__input-error',
-        inputErrorType: 'popup__input_error-type',
-        inputErrorActive: 'popup__input-error_active',
-    };
-
     constructor(data, form) {
         this._formSelector = data.formSelector;
         this._inputSelector = data.inputSelector;
@@ -16,8 +9,6 @@ export default class FormValidator {
         this._form = form;
         this._inputList = Array.from(this._form.querySelectorAll(this._inputSelector));
         this._buttonElement = this._form.querySelector(this._submitButtonSelector);
-        this._popupInputs = this._form.querySelectorAll(FormValidator.selectors.popupInput);
-        this._popupSpans = this._form.querySelectorAll(FormValidator.selectors.inputError);
     }
 
     _showInputError = (inputElement, errorMessage) => {
@@ -65,11 +56,8 @@ export default class FormValidator {
             });
         });
         this._form.addEventListener('reset', () => {
-            this._popupInputs.forEach((popupInput) => {
-                popupInput.classList.remove(FormValidator.selectors.inputErrorType);
-            });
-            this._popupSpans.forEach((popupSpan) => {
-                popupSpan.classList.remove(FormValidator.selectors.inputErrorActive);
+            this._inputList.forEach((inputElement) => {
+                this._hideInputError(inputElement);
             });
         });
     };
