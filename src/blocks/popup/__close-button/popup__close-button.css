@@ -10,6 +10,7 @@
     transform: rotate(45deg);
     cursor: pointer;
     transition: opacity 1s ease;
+    padding: 0;
     border: 0;
 }
 
@@ -18,10 +19,10 @@
 }
 
 @media screen and (max-width: 767px) {
-.popup__close-button {
-    width: 26px;
-    height: 26px;
-    right: 5px;
-    top: -45px;
-}
+    .popup__close-button {
+        width: 26px;
+        height: 26px;
+        right: 5px;
+        top: -45px;
+    }
 }

@@ -2,3 +2,7 @@
     margin: 0 0 33px;
     position: relative;
 }
+
+.popup__section:nth-last-of-type(1) {
+    margin: 0 0 51px;
+}

@@ -7,13 +7,9 @@
     background-color: initial;
     background-image: url(../../../images/Delete.svg);
     background-size: cover;
-    cursor: pointer;
     transition: opacity 1s ease;
     border: 0;
     padding: 0;
     outline: none;
-}
-
-.element__delete:hover {
-    opacity: 0.6;
+    opacity: 0;
 }

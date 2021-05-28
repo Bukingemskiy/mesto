@@ -1,14 +1,22 @@
 const profileTitle = '.profile__title';
 const profileSubtitle = '.profile__subtitle';
+const profileAvatar = '.profile__avatar';
+const updateAvatar = '.profile__image';
 const editPopup = '.edit-profile';
 const addPopup = '.add-card';
+const updatePopup = '.update-avatar';
 const imagePopup = '.card-image';
+const deleteCardPopup = '.delete-card';
 const cardListSelector = '.elements';
 const cardSelector = '.element-item-template';
 const editPopupBtn = '.profile__edit-button';
 const addPopupBtn = '.profile__add-button';
 const formEdit = '.popup__edit-form';
 const formAdd = '.popup__add-form';
+const formUpdate = '.popup__update-form';
+
+const addPopupClass = 'add-card';
+const deleteCardPopupClass = 'delete-card';
 
 const popupName = document.getElementById('popup_name');
 const popupText = document.getElementById('popup_text');
@@ -25,15 +33,22 @@ const validationConfig = {
 export {
     profileTitle,
     profileSubtitle,
+    profileAvatar,
+    updateAvatar,
     editPopup,
     addPopup,
+    updatePopup,
     imagePopup,
+    deleteCardPopup,
     cardListSelector,
     cardSelector,
     editPopupBtn,
     addPopupBtn,
     formEdit,
     formAdd,
+    formUpdate,
+    addPopupClass,
+    deleteCardPopupClass,
     popupName,
     popupText,
     validationConfig,
