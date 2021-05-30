@@ -1,6 +1,6 @@
-import Popup from './Popup.js';
+import PopupWithForm from './PopupWithForm.js';
 
-export default class PopupDeleteCard extends Popup {
+export default class PopupDeleteCard extends PopupWithForm {
     static selectors = {
         popupBtn: '.popup__save-button',
     };

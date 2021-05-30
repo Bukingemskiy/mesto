@@ -15,9 +15,6 @@ const formEdit = '.popup__edit-form';
 const formAdd = '.popup__add-form';
 const formUpdate = '.popup__update-form';
 
-const addPopupClass = 'add-card';
-const deleteCardPopupClass = 'delete-card';
-
 const popupName = document.getElementById('popup_name');
 const popupText = document.getElementById('popup_text');
 
@@ -47,8 +44,6 @@ export {
     formEdit,
     formAdd,
     formUpdate,
-    addPopupClass,
-    deleteCardPopupClass,
     popupName,
     popupText,
     validationConfig,

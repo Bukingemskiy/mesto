@@ -17,11 +17,9 @@ import {
     formUpdate,
     editPopup,
     addPopup,
-    addPopupClass,
     updatePopup,
     imagePopup,
     deleteCardPopup,
-    deleteCardPopupClass,
     popupName,
     popupText,
     cardListSelector,
@@ -39,22 +37,11 @@ const api = new Api({
 
 let client = null;
 
-function renderLoading(isLoading, popupSelector) {
-    const popup = document.querySelector(popupSelector);
-    const popupBtn = popup.querySelector(validationConfig.submitButtonSelector);
-    if (isLoading) {
-        popupBtn.textContent = 'Сохранение...';
-    } else if (popup.classList.contains(addPopupClass)) {
-        popupBtn.textContent = 'Создать';
-    } else if (popup.classList.contains(deleteCardPopupClass)) {
-        popupBtn.textContent = 'Да';
-    } else {
-        popupBtn.textContent = 'Сохранить';
-    }
-}
+const popupDelete = new PopupDeleteCard(deleteCardPopup, handlerDeleteCard);
+popupDelete.setEventListeners();
 
 function handlerDeleteCard(id, card) {
-    renderLoading(true, deleteCardPopup);
+    popupDelete.renderLoading(true);
     api.deleteCard(id)
         .then(() => {
             card.removeCard();
@@ -62,12 +49,9 @@ function handlerDeleteCard(id, card) {
         })
         .catch((err) => console.log(`${err}`))
         .finally(() => {
-            renderLoading(false, deleteCardPopup);
+            popupDelete.renderLoading(false);
         });
 }
-
-const popupDelete = new PopupDeleteCard(deleteCardPopup, handlerDeleteCard);
-popupDelete.setEventListeners();
 
 const popupWithImage = new PopupWithImage(imagePopup);
 popupWithImage.setEventListeners();
@@ -101,14 +85,13 @@ Promise.all([api.getUserData(), api.getCards()])
         userInfo.setAvatar({ avatar: user.avatar });
         cardList.renderItems(cards);
     })
-    .catch((err) => console.log(`${err}`))
-    .finally();
+    .catch((err) => console.log(`${err}`));
 
 const popupWithFormEdit = new PopupWithForm(editPopup, handlerFormEdit);
 popupWithFormEdit.setEventListeners();
 
 function handlerFormEdit(data) {
-    renderLoading(true, editPopup);
+    popupWithFormEdit.renderLoading(true);
     api.editProfile({ ...data, name: data.name, about: data.info })
         .then((result) => {
             userInfo.setUserInfo({ name: result.name, about: result.about });
@@ -116,7 +99,7 @@ function handlerFormEdit(data) {
         })
         .catch((err) => console.log(`${err}`))
         .finally(() => {
-            renderLoading(false, editPopup);
+            popupWithFormEdit.renderLoading(false);
         });
 }
 
@@ -135,7 +118,7 @@ const popupWithFormUpdate = new PopupWithForm(updatePopup, handlerFormUpdate);
 popupWithFormUpdate.setEventListeners();
 
 function handlerFormUpdate(data) {
-    renderLoading(true, updatePopup);
+    popupWithFormUpdate.renderLoading(true);
     api.updateImage({ ...data, avatar: data.avatar })
         .then((result) => {
             userInfo.setAvatar({ avatar: result.avatar });
@@ -143,7 +126,7 @@ function handlerFormUpdate(data) {
         })
         .catch((err) => console.log(`${err}`))
         .finally(() => {
-            renderLoading(false, updatePopup);
+            popupWithFormUpdate.renderLoading(false);
         });
 }
 
@@ -159,7 +142,7 @@ const popupWithFormAdd = new PopupWithForm(addPopup, handlerFormAdd);
 popupWithFormAdd.setEventListeners();
 
 function handlerFormAdd(data) {
-    renderLoading(true, addPopup);
+    popupWithFormAdd.renderLoading(true);
     api.makeCard({ ...data, name: data.title, link: data.link })
         .then((result) => {
             cardList.addItem(createCard(result));
@@ -167,7 +150,7 @@ function handlerFormAdd(data) {
         })
         .catch((err) => console.log(`${err}`))
         .finally(() => {
-            renderLoading(false, addPopup);
+            popupWithFormAdd.renderLoading(false);
         });
 }
 

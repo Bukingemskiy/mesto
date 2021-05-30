@@ -58,8 +58,7 @@ export default class Card {
                         this._likeBtn.classList.add(Card.selectors.buttonLikeActive);
                         this._likeCounter.textContent = this._data.likes.length;
                     })
-                    .catch((err) => console.log(`${err}`))
-                    .finally();
+                    .catch((err) => console.log(`${err}`));
             } else {
                 this._api
                     .likeOff(this._data._id)
@@ -68,8 +67,7 @@ export default class Card {
                         this._likeBtn.classList.remove(Card.selectors.buttonLikeActive);
                         this._likeCounter.textContent = this._data.likes.length;
                     })
-                    .catch((err) => console.log(`${err}`))
-                    .finally();
+                    .catch((err) => console.log(`${err}`));
             }
         });
     }
